@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h1, h3 {
+      text-align: center;
+      color: #444;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 8px 14px;
+      margin: 10px 0;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    a.button:hover {
+      background-color: #45a049;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    li {
+      background: #fff;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .service-info {
+      flex: 1;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .actions a, .actions button {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .actions a {
+      background-color: #2196F3;
+      color: white;
+      text-decoration: none;
+    }
+
+    .actions a:hover {
+      background-color: #0b7dda;
+    }
+
+    .actions button {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .actions button:hover {
+      background-color: #da190b;
+    }
+  </style>
+</head>
+<body>
+  <h1>Services Manager</h1>
+  <div style="text-align: center;">
+    <a href="{{ url_for('create') }}" class="button">➕ Create New Service</a>
+  </div>
+
+  {% if services %}
+  <h3>Available Services</h3>
+  <ul>
+    {% for service in services %}
+      <li>
+        <div class="service-info">
+          <strong>{{ service.name }}</strong><br>
+          {{ service.description }} <br>
+          <small><em>₹{{ service.price }}</em></small>
+        </div>
+        <div class="actions">
+          <a href="{{ url_for('update', service_id=service.id) }}">✏️ Edit</a>
+          <form action="{{ url_for('delete', service_id=service.id) }}" method="POST" style="display:inline;">
+            <button type="submit">🗑️ Delete</button>
+          </form>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p style="text-align:center; color:gray;">No services available. Click "Create New Service" to add one.</p>
+  {% endif %}
+  
+</body>
+</html>
