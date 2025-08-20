@@ -1,0 +1,15 @@
+2025-08-20 18:16:48,050 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-20 18:16:48,050 [INFO] [33mPress CTRL+C to quit[0m
+2025-08-20 18:16:48,072 [INFO]  * Restarting with stat
+2025-08-20 18:16:48,693 [WARNING]  * Debugger is active!
+2025-08-20 18:16:48,717 [INFO]  * Debugger PIN: 848-543-880
+2025-08-20 18:17:20,284 [INFO] Home page accessed
+2025-08-20 18:17:20,286 [INFO] 127.0.0.1 - - [20/Aug/2025 18:17:20] "GET / HTTP/1.1" 200 -
+2025-08-20 18:17:21,050 [INFO] 127.0.0.1 - - [20/Aug/2025 18:17:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-20 18:18:15,825 [ERROR] Error occurred: division by zero
+2025-08-20 18:18:15,923 [INFO] 127.0.0.1 - - [20/Aug/2025 18:18:15] "[35m[1mGET /error HTTP/1.1[0m" 500 -
+2025-08-20 18:25:25,722 [INFO]  * Detected change in 'C:\\Users\\Admin\\Documents\\GitHub\\flask_learning\\flash1.py', reloading
+2025-08-20 18:25:25,820 [INFO]  * Restarting with stat
+2025-08-20 18:25:28,251 [WARNING]  * Debugger is active!
+2025-08-20 18:25:28,258 [INFO]  * Debugger PIN: 848-543-880
